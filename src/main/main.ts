@@ -14,6 +14,7 @@ import MprisModule from './modules/mpris';
 import DialogsModule from './modules/dialogs';
 import NativeThemeModule from './modules/native-theme';
 import DevtoolsModule from './modules/devtools';
+import I18nModule from './modules/i18n';
 
 import * as ModulesManager from './lib/modules-manager';
 import { checkBounds } from './lib/utils';
@@ -89,6 +90,7 @@ app.on('ready', async () => {
     new MprisModule(mainWindow),
     new DialogsModule(mainWindow),
     new NativeThemeModule(mainWindow, configModule),
-    new DevtoolsModule(mainWindow)
+    new DevtoolsModule(mainWindow),
+    new I18nModule(mainWindow, configModule)
   ).catch(console.error);
 });
